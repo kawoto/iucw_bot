@@ -1,0 +1,13 @@
+python-telegram-bot
+
+requests
+
+lxml
+
+beautifulsoup4
+
+tenacity
+
+logging
+
+telegram.ext
