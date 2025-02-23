@@ -1,3 +1,4 @@
+import os
 import logging
 import requests
 from lxml import html
@@ -7,7 +8,9 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, filters, CallbackContext
 
 # Telegram Bot Token
-BOT_TOKEN = "8154719666:AAFOCEJ7JegfE_BtObbLSYaaMnSvJ42U_4Y"
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN)
+if not BOT_TOKEN:
+    raise ValueError("BOT TOKEN NOT FOUND! please set it in GitHub secrets.")
 
 # Login URLs
 LOGIN_URL = "https://196.191.244.97/Account/Login"
